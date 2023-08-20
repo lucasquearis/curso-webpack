@@ -7,6 +7,7 @@ import fraseTxt from "./files/frase.txt";
 import descricao from "./files/descricao.json";
 import Heading from "./components/heading/heading";
 import sum from "./calc";
+import $ from "jquery";
 
 const title = new Title();
 const image = new Image();
@@ -16,6 +17,10 @@ const heading = new Heading();
 heading.create("Heading");
 title.create("Primeira Página");
 button.create();
+
+const bodyJ = $("body");
+const p = $("<p></p>").text("TEXTO EM JQUERY").css("color", "red");
+bodyJ.append(p);
 
 image.insertImage();
 

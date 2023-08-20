@@ -8,6 +8,7 @@
     "dev": "webpack serve --config webpack.dev.config.js"
   },
   "dependencies": {
+    "jquery": "^3.7.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
