@@ -55,6 +55,10 @@ module.exports = {
         test: /\.txt$/,
         use: "raw-loader",
       },
+      {
+        test: /\.(ttf|woff|woff2)$/,
+        use: "url-loader",
+      },
     ],
   },
   plugins: [

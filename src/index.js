@@ -9,6 +9,9 @@ import Heading from "./components/heading/heading";
 import sum from "./calc";
 import $ from "jquery";
 
+// Import Fonts
+import "./styles/fonts.css";
+
 const title = new Title();
 const image = new Image();
 const button = new Button();

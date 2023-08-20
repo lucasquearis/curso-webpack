@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "ADLaM Display";
+  src: url("../fonts/ADLaMDisplay-Regular.ttf"),
+    url("../fonts/ADLaMDisplay-Regular.woff"),
+    url("../fonts/ADLaMDisplay-Regular.woff2");
+}
