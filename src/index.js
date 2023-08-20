@@ -8,9 +8,18 @@ import descricao from "./files/descricao.json";
 import Heading from "./components/heading/heading";
 import sum from "./calc";
 import $ from "jquery";
+import { dom, library } from "@fortawesome/fontawesome-svg-core";
+import { faAws, hou } from "@fortawesome/free-brands-svg-icons";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 // Import Fonts
 import "./styles/fonts.css";
+
+// Import Icons
+
+library.add(faAws);
+library.add(faHouse);
+dom.watch();
 
 const title = new Title();
 const image = new Image();
@@ -23,6 +32,10 @@ button.create();
 
 const bodyJ = $("body");
 const p = $("<p></p>").text("TEXTO EM JQUERY").css("color", "red");
+const iconAws = $("<i></i>").addClass("fa-brands fa-aws");
+const iconHouse = $("<i></i>").addClass("fa-solid fa-house");
+bodyJ.append(iconAws);
+bodyJ.append(iconHouse);
 bodyJ.append(p);
 
 image.insertImage();
