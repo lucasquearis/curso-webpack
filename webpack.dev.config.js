@@ -1,6 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugn = require("mini-css-extract-plugin");
-// const TerserPlugin = require("terser-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require("webpack");
 const DotenvPlugin = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -13,6 +13,15 @@ module.exports = {
     filename: "[name][contenthash].js",
   },
   mode: "development",
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "dist"),
+    },
+    port: 3000,
+    historyApiFallback: {
+      index: "index.html",
+    },
+  },
   module: {
     rules: [
       {
@@ -50,6 +59,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      title: "Webpack é top!",
+    }),
     new MiniCssExtractPlugn({
       filename: "[name][contenthash].css",
     }),
@@ -58,6 +71,6 @@ module.exports = {
       PORT: JSON.stringify(8080),
     }),
     new DotenvPlugin(),
-    new HtmlWebpackPlugin(),
+    new TerserPlugin(),
   ],
 };
