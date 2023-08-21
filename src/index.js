@@ -9,14 +9,15 @@ import Heading from "./components/heading/heading";
 import sum from "./calc";
 import $ from "jquery";
 import { dom, library } from "@fortawesome/fontawesome-svg-core";
-import { faAws, hou } from "@fortawesome/free-brands-svg-icons";
+import { faAws } from "@fortawesome/free-brands-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import "bootstrap";
+import "./styles/bootstrap.scss";
 
 // Import Fonts
 import "./styles/fonts.css";
 
 // Import Icons
-
 library.add(faAws);
 library.add(faHouse);
 dom.watch();
@@ -37,6 +38,12 @@ const iconHouse = $("<i></i>").addClass("fa-solid fa-house");
 bodyJ.append(iconAws);
 bodyJ.append(iconHouse);
 bodyJ.append(p);
+
+const alert = $("<div></div")
+  .addClass("alert alert-primary")
+  .text("Cuidado com isso!!");
+
+bodyJ.append(alert);
 
 image.insertImage();
 
