@@ -1,3 +1,6 @@
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
 import Button from "./components/button/button";
 import Image from "./components/image/image";
 import Title from "./components/title/title";
@@ -97,3 +100,8 @@ const z = sum(100, 50);
 console.log(x);
 console.log(y);
 console.log(z);
+
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(<App />);

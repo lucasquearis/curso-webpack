@@ -65,6 +65,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
+      template: path.resolve(__dirname, "public", "index.html"),
       title: "Webpack é top!",
     }),
     new MiniCssExtractPlugn({
