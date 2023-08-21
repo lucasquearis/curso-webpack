@@ -1,5 +1,4 @@
 import AppVue from "./App.vue";
-import { createApp } from "vue";
 import router from "./routes";
 import { createRoot } from "react-dom/client";
 import App from "./App";
@@ -12,7 +11,6 @@ import fraseTxt from "./files/frase.txt";
 import descricao from "./files/descricao.json";
 import Heading from "./components/heading/heading";
 import sum from "./calc";
-import * as $ from "jquery";
 import { dom, library } from "@fortawesome/fontawesome-svg-core";
 import { faAws } from "@fortawesome/free-brands-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
@@ -22,7 +20,6 @@ import "./styles/styles.scss";
 
 // Import Fonts
 import "./styles/fonts.css";
-import * as React from "react";
 
 // Import Icons
 library.add(faAws);
@@ -60,7 +57,6 @@ bodyJ.append(p);
 bodyJ.append(titleBulma);
 bodyJ.append(subTitleBulma);
 bodyJ.append(div);
-// @ts-ignore
 const alert = $("<div></div>")
   .addClass("alert alert-primary")
   .text("Cuidado com isso!!");
@@ -110,7 +106,8 @@ const root = createRoot(container);
 root.render(<App />);
 
 // Vue
-const app = createApp(AppVue);
+// @ts-ignore
+const app = Vue.createApp(AppVue);
 
 app.use(router);
 app.mount("#app");

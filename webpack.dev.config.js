@@ -28,19 +28,23 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        use: "ts-loader",
+        loader: "ts-loader",
+        include: path.resolve(__dirname, "src"),
       },
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugn.loader, "css-loader"],
+        include: path.resolve(__dirname, "src"),
       },
       {
         test: /\.(png|jpg|jpeg)$/,
-        use: "file-loader",
+        loader: "file-loader",
+        include: path.resolve(__dirname, "src"),
       },
       {
         test: /\.scss$/,
         use: [MiniCssExtractPlugn.loader, "css-loader", "sass-loader"],
+        include: path.resolve(__dirname, "src"),
       },
       {
         test: /\.js$/,
@@ -52,22 +56,27 @@ module.exports = {
             plugins: ["@babel/plugin-proposal-object-rest-spread"],
           },
         },
+        include: path.resolve(__dirname, "src"),
       },
       {
         test: /\.vue$/,
         loader: "vue-loader",
+        include: path.resolve(__dirname, "src"),
       },
       {
         test: /\.html$/,
-        use: "html-loader",
+        loader: "html-loader",
+        include: path.resolve(__dirname, "src"),
       },
       {
         test: /\.txt$/,
-        use: "raw-loader",
+        loader: "raw-loader",
+        include: path.resolve(__dirname, "src"),
       },
       {
         test: /\.(ttf|woff|woff2)$/,
-        use: "url-loader",
+        loader: "url-loader",
+        include: path.resolve(__dirname, "src"),
       },
     ],
   },
@@ -75,6 +84,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: "jquery",
       React: "react",
+      Vue: ["@vue/runtime-dom", "default"],
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -98,5 +108,8 @@ module.exports = {
       vue: "@vue/runtime-dom",
     },
     extensions: ["*", ".js", ".vue", ".json", ".tsx", ".ts", ".js"],
+  },
+  optimization: {
+    runtimeChunk: true,
   },
 };

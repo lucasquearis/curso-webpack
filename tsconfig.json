@@ -5,11 +5,11 @@
     "noImplicitAny": true,
     "module": "ES6",
     "target": "ES5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
-    "types": ["@vue/runtime-core"],
+    "types": ["@vue/runtime-core", "jquery", "react", "vue"],
     "allowUmdGlobalAccess": true
   }
 }
