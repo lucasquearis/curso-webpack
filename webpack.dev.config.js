@@ -72,6 +72,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      React: "react",
+    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",

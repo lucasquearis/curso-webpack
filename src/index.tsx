@@ -1,4 +1,3 @@
-import React, { ReactNode } from "react";
 import AppVue from "./App.vue";
 import { createApp } from "vue";
 import router from "./routes";
@@ -13,7 +12,7 @@ import fraseTxt from "./files/frase.txt";
 import descricao from "./files/descricao.json";
 import Heading from "./components/heading/heading";
 import sum from "./calc";
-import $ from "jquery";
+import * as $ from "jquery";
 import { dom, library } from "@fortawesome/fontawesome-svg-core";
 import { faAws } from "@fortawesome/free-brands-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
@@ -23,6 +22,7 @@ import "./styles/styles.scss";
 
 // Import Fonts
 import "./styles/fonts.css";
+import * as React from "react";
 
 // Import Icons
 library.add(faAws);
@@ -37,19 +37,16 @@ const heading = new Heading();
 heading.create("Heading");
 title.create("Primeira Página");
 button.create();
-
 const bodyJ = $("body");
 const p = $("<p></p>").text("TEXTO EM JQUERY").css("color", "red");
 const iconAws = $("<i></i>").addClass("fa-brands fa-aws");
 const iconHouse = $("<i></i>").addClass("fa-solid fa-house");
-
 const titleBulma = $("<h1></h1>")
   .addClass("title")
   .text("Aqui é um título com o Bulma");
 const subTitleBulma = $("<p></p>")
   .addClass("subtitle")
   .text("Subtitle com o bulma! framework top!");
-
 const div = $("<div></div>");
 const primaryButton = $("<a></a>")
   .addClass("button is-primary")
@@ -63,7 +60,7 @@ bodyJ.append(p);
 bodyJ.append(titleBulma);
 bodyJ.append(subTitleBulma);
 bodyJ.append(div);
-
+// @ts-ignore
 const alert = $("<div></div>")
   .addClass("alert alert-primary")
   .text("Cuidado com isso!!");
@@ -110,8 +107,7 @@ console.log(z);
 const container = document.getElementById("root");
 const root = createRoot(container);
 
-// @ts-ignore
-root.render((<App />) as ReactNode);
+root.render(<App />);
 
 // Vue
 const app = createApp(AppVue);

@@ -9,6 +9,7 @@
     "allowJs": true,
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
-    "types": ["@vue/runtime-core"]
+    "types": ["@vue/runtime-core"],
+    "allowUmdGlobalAccess": true
   }
 }
