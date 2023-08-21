@@ -1,4 +1,7 @@
 import React from "react";
+import AppVue from "./App.vue";
+import { createApp } from "vue";
+import router from "./routes";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import Button from "./components/button/button";
@@ -101,7 +104,14 @@ console.log(x);
 console.log(y);
 console.log(z);
 
+// React
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(<App />);
+
+// Vue
+const app = createApp(AppVue);
+
+app.use(router);
+app.mount("#app");

@@ -5,6 +5,7 @@ const webpack = require("webpack");
 const DotenvPlugin = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
   entry: "./src/index.js",
@@ -48,6 +49,10 @@ module.exports = {
         },
       },
       {
+        test: /\.vue$/,
+        loader: "vue-loader",
+      },
+      {
         test: /\.html$/,
         use: "html-loader",
       },
@@ -77,5 +82,12 @@ module.exports = {
     }),
     new DotenvPlugin(),
     new TerserPlugin(),
+    new VueLoaderPlugin(),
   ],
+  resolve: {
+    alias: {
+      vue: "@vue/runtime-dom",
+    },
+    extensions: ["*", ".js", ".vue", ".json"],
+  },
 };
