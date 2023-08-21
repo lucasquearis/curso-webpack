@@ -1,15 +1,12 @@
-import "./title.css";
+import "./heading.css";
 
-class Title {
-  create(title) {
+class Heading {
+  create(title: string) {
     const h1 = document.createElement("h1");
-
     h1.innerText = title;
-
-    h1.classList.add("main-title");
-
+    h1.classList.add("title-heading");
     document.querySelector("body").appendChild(h1);
   }
 }
 
-export default Title;
+export default Heading;

@@ -8,7 +8,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name][contenthash].js",
@@ -16,6 +16,11 @@ module.exports = {
   mode: "production",
   module: {
     rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: "ts-loader",
+      },
       {
         test: /\.vue$/,
         loader: "vue-loader",
@@ -76,8 +81,8 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      vue: "vue/dist/vue.runtime.esm.js",
+      vue: "@vue/runtime-dom",
     },
-    extensions: ["*", ".js", ".vue", ".json"],
+    extensions: ["*", ".js", ".vue", ".json", ".tsx", ".ts", ".js"],
   },
 };

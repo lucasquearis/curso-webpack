@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import AppVue from "./App.vue";
 import { createApp } from "vue";
 import router from "./routes";
@@ -64,7 +64,7 @@ bodyJ.append(titleBulma);
 bodyJ.append(subTitleBulma);
 bodyJ.append(div);
 
-const alert = $("<div></div")
+const alert = $("<div></div>")
   .addClass("alert alert-primary")
   .text("Cuidado com isso!!");
 
@@ -92,13 +92,15 @@ body.innerHTML += frase.toUpperCase();
 // Import JSON;
 body.innerHTML += JSON.stringify(descricao);
 
+// @ts-ignore
 console.log(VERSION);
+// @ts-ignore
 console.log(PORT);
 console.log(process.env.KEY);
 
-const x = sum(1, 2);
-const y = sum(10, 50);
-const z = sum(100, 50);
+const x: number = sum(1, 2);
+const y: number = sum(10, 50);
+const z: number = sum(100, 50);
 
 console.log(x);
 console.log(y);
@@ -108,7 +110,8 @@ console.log(z);
 const container = document.getElementById("root");
 const root = createRoot(container);
 
-root.render(<App />);
+// @ts-ignore
+root.render((<App />) as ReactNode);
 
 // Vue
 const app = createApp(AppVue);
