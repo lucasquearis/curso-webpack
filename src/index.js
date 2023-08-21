@@ -13,6 +13,7 @@ import { faAws } from "@fortawesome/free-brands-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap";
 import "./styles/bootstrap.scss";
+import "./styles/styles.scss";
 
 // Import Fonts
 import "./styles/fonts.css";
@@ -35,9 +36,27 @@ const bodyJ = $("body");
 const p = $("<p></p>").text("TEXTO EM JQUERY").css("color", "red");
 const iconAws = $("<i></i>").addClass("fa-brands fa-aws");
 const iconHouse = $("<i></i>").addClass("fa-solid fa-house");
+
+const titleBulma = $("<h1></h1>")
+  .addClass("title")
+  .text("Aqui é um título com o Bulma");
+const subTitleBulma = $("<p></p>")
+  .addClass("subtitle")
+  .text("Subtitle com o bulma! framework top!");
+
+const div = $("<div></div>");
+const primaryButton = $("<a></a>")
+  .addClass("button is-primary")
+  .text("Botão Bulma");
+const linkBulma = $("<a></a>").addClass("button is-link").text("Link Bulma");
+div.append(primaryButton);
+div.append(linkBulma);
 bodyJ.append(iconAws);
 bodyJ.append(iconHouse);
 bodyJ.append(p);
+bodyJ.append(titleBulma);
+bodyJ.append(subTitleBulma);
+bodyJ.append(div);
 
 const alert = $("<div></div")
   .addClass("alert alert-primary")
